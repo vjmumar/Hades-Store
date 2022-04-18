@@ -45,7 +45,7 @@ export const HomeContextProvider = ({ children }) => {
 
 	const onFilterProducts = (value = '') => {
 		setIsFiltered(true);
-		const copyFiltered = products.filter(({ title }) => title.toLowerCase().includes(value));
+		const copyFiltered = products.filter(({ title }) => title.toLowerCase().includes(value.toLocaleLowerCase()));
 		setPaginatedProducts(copyFiltered);
 		setFilteredProducts(copyFiltered);
 		updateSelectFromUi();
