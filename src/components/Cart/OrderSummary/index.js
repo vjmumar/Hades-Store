@@ -25,8 +25,12 @@ const OrderSummary = () => {
 	}
     checkoutItemsCopy.push(obj);
 	});
-	setCheckoutItems(checkoutItemsCopy);
+	
+	if (checkedItemsCopy.length) {
+    setCheckoutItems(checkoutItemsCopy);
 	updateOrder(checkoutItemsCopy);
+	}
+
 	}
 
 	return (

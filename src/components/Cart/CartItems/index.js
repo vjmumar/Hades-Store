@@ -41,7 +41,7 @@ const CartItems = () => {
 						/>
 						<IconButton w={"15%"} position={"absolute"} top={"0"} right={"0"} onClick={() => removeProductFromCart(id)} icon={<DeleteIcon />} />
 						<Link to={`/product-details/${id}`}>
-						<Image w={"200px"} h={"200px"} objectFit={"contain"}  marginBottom={"10px"}  src={image} />
+						<Image w={{base: '160px', lg: "200px"}} h={{base: '130px', lg: "200px"}} objectFit={"contain"}  marginBottom={"10px"}  src={image} />
 						<Text textAlign={"center"}>{minimizeTextLength(title,19)}</Text>
 						<Text textAlign={"center"}>${price}</Text>
 						</Link>

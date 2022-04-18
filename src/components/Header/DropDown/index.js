@@ -20,9 +20,10 @@ const DropDown = ({ isHidden }) => {
 
 	return (
 		<Stack
-			position={'absolute'}
-			bottom={'-328%'}
+		    position={'absolute'}
+		    bottom={'-100%'}
 			background={'white'}
+			transform={'translate(-63%,95%)'}
 			p={'15px'}
 			w={'175px'}
 			border={'1px solid #e9e9e9'}

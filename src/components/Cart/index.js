@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, lazy, Suspense } from 'react';
 import { Stack, Flex, Box, Image } from '@chakra-ui/react';
-import CartItems from './CartItems';
 import OrderSummary from './OrderSummary';
 import RingLoader from '../../../src/assets/ringloader.gif';
 import { CartContext } from '../../page/Cart/context';
 import BackButton from '../BackButton';
+
+//lazy
+const CartItems = lazy(() => import('./CartItems/index'));
 
 const CartBody = () => {
 	const { isLoading } = useContext(CartContext);
@@ -35,7 +37,13 @@ const CartBody = () => {
 						}
 					}}
 				>
-					{isLoading ? <Image src={RingLoader} /> : <CartItems />}
+					{isLoading ? (
+						<Image src={RingLoader} />
+					) : (
+						<Suspense fallback={<Image src={RingLoader} />}>
+							<CartItems />
+						</Suspense>
+					)}
 				</Flex>
 				<Box
 					position={'sticky'}
