@@ -23,7 +23,7 @@ const DropDown = ({ isHidden }) => {
 			position={'fixed'}
 			bottom={'82%'}
 			background={'white'}
-			transform={'translate(-80%, 20px)'}
+			transform={'translate(-63%, 8px)'}
 			p={'15px'}
 			w={'175px'}
 			border={'1px solid #e9e9e9'}

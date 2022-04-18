@@ -5,7 +5,6 @@ import { startSignIn } from './redux/actions/signIn';
 import { getStorage } from 'firebase/storage';
 import { store } from './index';
 
-const savedId = localStorage.getItem('firebaseId');
 export const firebaseConfig = {
 	apiKey: 'AIzaSyCCS4-9Eh2mzD4-EQn1GKWLuOdF2f_nh_k',
 	authDomain: 'eccommerce-517f7.firebaseapp.com',

@@ -68,7 +68,9 @@ const Header = () => {
 					w={{ base: '100%', lg: 'fit-content' }}
 					alignItems={'center'}
 				>
-					<Stack m={'0px 15px'}>{location.pathname === '/' && <Search />}</Stack>
+					<Stack m={{ base: '0px 15px 0px 0px', lg: '0px 15px' }}>
+						{location.pathname === '/' && <Search />}
+					</Stack>
 					<Stack m={'0 5px'}>
 						<Stack position={'relative'}>
 							<Image
