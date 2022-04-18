@@ -1,17 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { ChakraProvider } from '@chakra-ui/react';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { rootReducer } from './redux/combineReducers';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { BrowserRouter } from 'react-router-dom';
+import { initializeApp } from 'firebase/app';
+import thunk from 'redux-thunk';
+import './assets/style.css';
+import { firebaseConfig } from './firebase';
+
+initializeApp(firebaseConfig);
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<Provider store={store}>
+		<BrowserRouter>
+			<ChakraProvider>
+				<App />
+			</ChakraProvider>
+		</BrowserRouter>
+	</Provider>,
+	document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
